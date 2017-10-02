@@ -1,0 +1,61 @@
+
+<div id="wrapper">
+	<div id="banner">
+		<h1 class="logo">
+			<a href="index.jsp" title="MetaSee"><span>MetaSee</span></a>
+		</h1>
+		<div id="dock">
+			<div class="left"></div>
+			<!--
+			<ul>
+				<li class="selected">
+					<a href="/visualizationlab/map/">Metagenome global survey</a>
+				</li>
+				<li class="selected" style="padding-right: 12px;">
+					<a href="/visualizationlab/mouth/">Digital Mouth</a>
+				</li>
+			<li class="selected" style="padding-right: 12px;">
+					<a href="/visualizationlab/search/">Database Search</a>
+				</li>
+				<li style="padding-left: 12px;">
+					<div style="background: #555; width: 1px; height: 24px; position: absolute; left: 0px;"></div>
+					<a href="http://groups.google.com/group/metasee">Discussion</a>
+				</li>
+				<li>
+					<a href="/about.jsp">About</a>
+				</li>
+				<li>
+					<a href="/acknowledge.jsp">Acknowledge</a>
+				</li>
+			</ul>
+			-->
+			<div class="right"></div>
+		</div>
+        
+        
+		<div id="navigation">
+			<div class="left"></div>
+			<ul>
+				<li class="selected">
+					<a href="index">Home</a>
+				</li>
+				<li >
+					<a href="mmist/">M-MIST</a>
+				</li>
+				<li >
+					<a href="pssm/">D-MIST</a>
+				</li>
+				<li >
+					<a href="interolog/">interolog</a>
+				</li>
+				<li >
+					<a href="dfsp/">DFSP</a>
+				</li>
+				<li >
+					<a href="document" class="last">Document</a>
+				</li>
+			</ul>
+			<div class="right"></div>
+		</div>
+	</div>
+	<div style="clear:both"></div>

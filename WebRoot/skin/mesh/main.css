@@ -1,0 +1,82 @@
+/* CSS Document */
+
+
+
+#content{ /* Here are the tiles and page content showed */
+	margin:20px 0 40px 0;
+	position:relative;
+	width: auto;
+}
+
+/* TILES */ 
+#tile{
+	padding: 0;
+	margin: 0;
+	left: 1px;
+	top: -1px;
+}
+.tile{
+	display:none;
+	text-decoration:none; /* They are links for google, so we'll decorate them like normal text :) */
+	color: #FFF;
+}
+
+.tile:visited{
+	color:#FFF;
+}
+.tile:hover{
+	text-decoration: none;
+	color:#FFF;
+	opacity:0.9;
+}
+#title{
+	margin:0 0 0 5px;
+	padding: 0px;
+	font-size: 30px;
+	font-weight:500;
+}
+#desc{
+	margin: 0;
+	padding: 0px;
+	font-size: 14px;
+}
+
+/* SLIDES (show a title, and when clicked on the content shows with a nice slide animation) */
+.slide_content{
+	padding-left: 25px;
+}
+.slide_head{
+	cursor:pointer;
+	font-size:26px;
+}
+.slide_head:hover{
+	color:#F90;
+}
+.slide_image{
+	height:24px;
+	width:24px;
+	vertical-align:middle;
+	margin-top:-8px;
+	margin-right: 10px;
+}
+
+
+.tile{
+	overflow:hidden;
+}
+.tile_image_slider:hover{
+	opacity:1;
+}
+
+a:link {
+ text-decoration: none;
+}
+a:visited {
+ text-decoration: none;
+}
+a:hover {
+ text-decoration: none;
+}
+a:active {
+ text-decoration: none;
+}

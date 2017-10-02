@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.multipart.maxSize" value="1024000000"/>
+    <constant name="struts.devMode" value="true" />
+	<constant name="struts.multipart.saveDir" value="/var/lib/tomcat7/ppipp/ROOT/tem/"/>
+
+	 <package name="default" namespace="/" extends="struts-default">
+        <default-action-ref name="index" />
+        <global-results>
+            <result name="error">/error.jsp</result>
+        </global-results>
+        
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+        
+        <action name="index" class="me.songbx.action.Constant">
+            <result>/WEB-INF/pages/index.jsp</result>
+        </action>
+        <action name="logcontent" class="me.songbx.action.LogAction" method="content">
+            <result>/WEB-INF/pages/common/log.jsp</result>
+        </action>
+    </package>
+    
+    <package name="upload" namespace="/" extends="struts-default">
+			<action name="uploadFile" class="me.songbx.util.UploadFileAction">
+			</action>
+	</package>
+	<package name="dfsp" namespace="/dfsp" extends="default">
+		<action name="index">
+            <result>/WEB-INF/pages/dfsp/index.jsp</result>
+        </action>
+		<action name="startDfsp" class="me.songbx.action.DfspAction" method="startDfsp">
+            <result name="success">/WEB-INF/pages/dfsp/dfsp_sucess.jsp</result>
+        </action>
+        <action name="dfspresult" class="me.songbx.action.DfspAction" method="resultDfsp">
+            <result name="success">/WEB-INF/pages/dfsp/dfsp_result.jsp</result>
+            <result name="doing">/WEB-INF/pages/dfsp/dfsp_doing.jsp</result>
+            <result name="queue">/WEB-INF/pages/dfsp/dfsp_queue.jsp</result>
+            <result name="none">/WEB-INF/pages/dfsp/dfsp_none_result.jsp</result>
+            <result name="error">/WEB-INF/pages/dfsp/dfsp_error_result.jsp</result>
+        </action>
+        <action name="download" class="me.songbx.action.DfspResultDownloadAction">
+            <result name="success" type="stream">
+            	<param name="inputName">targetFile</param>
+				<param name="contentDisposition">filename="dfsp.zip"</param>
+				<param name="bufferSize">4096</param>
+            </result>
+        </action>
+	</package>
+	
+	<package name="pssm" namespace="/pssm" extends="default">
+		<action name="index">
+            <result>/WEB-INF/pages/pssm/index.jsp</result>
+        </action>
+        <action name="startPssm" class="me.songbx.action.PssmAction" method="startPssm">
+            <result name="success">/WEB-INF/pages/pssm/startPssm_sucess.jsp</result>
+        </action>
+        
+		<action name="pssmresult" class="me.songbx.action.PssmAction" method="resultPssm">
+            <result name="success">/WEB-INF/pages/pssm/pssm_result.jsp</result>
+            <result name="doing">/WEB-INF/pages/pssm/pssm_doing.jsp</result>
+            <result name="queue">/WEB-INF/pages/pssm/pssm_queue.jsp</result>
+            <result name="none">/WEB-INF/pages/pssm/pssm_none_result.jsp</result>
+            <result name="error">/WEB-INF/pages/pssm/pssm_error_result.jsp</result>
+        </action>
+        <action name="download" class="me.songbx.action.PssmResultDownloadAction">
+            <result name="success" type="stream">
+            	<param name="inputName">targetFile</param>
+				<param name="contentDisposition">filename="pssm.zip"</param>
+				<param name="bufferSize">4096</param>
+            </result>
+        </action>
+	</package>
+	
+	<package name="interolog" namespace="/interolog" extends="default">
+		<action name="index">
+            <result>/WEB-INF/pages/interlog/index.jsp</result>
+        </action>
+        <action name="startInterlog" class="me.songbx.action.InterlogAction" method="startInterlog">
+            <result name="success">/WEB-INF/pages/interlog/startInterlog_sucess.jsp</result>
+        </action>
+        
+		<action name="interologresult" class="me.songbx.action.InterlogAction" method="resultInterlog">
+            <result name="success">/WEB-INF/pages/interlog/interlog_result.jsp</result>
+            <result name="doing">/WEB-INF/pages/interlog/interlog_doing.jsp</result>
+            <result name="queue">/WEB-INF/pages/interlog/interlog_queue.jsp</result>
+            <result name="none">/WEB-INF/pages/interlog/interlog_none_result.jsp</result>
+            <result name="error">/WEB-INF/pages/interlog/interlog_error_result.jsp</result>
+        </action>
+        <action name="download" class="me.songbx.action.InterlogResultDownloadAction">
+            <result name="success" type="stream">
+            	<param name="inputName">targetFile</param>
+				<param name="contentDisposition">filename="interlog.zip"</param>
+				<param name="bufferSize">4096</param>
+            </result>
+        </action>
+        <action name="log" class="me.songbx.action.PssmAction" method="log">
+            <result name="success">/WEB-INF/pages/interlog/log.jsp</result>
+        </action>
+	</package>
+	
+	<package name="mmist" namespace="/mmist" extends="default">
+		<action name="index">
+            <result>/WEB-INF/pages/mmist/index.jsp</result>
+        </action>
+        <action name="startMmist" class="me.songbx.action.MmistAction" method="startMmist">
+            <result name="success">/WEB-INF/pages/mmist/startMmist_sucess.jsp</result>
+        </action>
+		<action name="mmistresult" class="me.songbx.action.MmistAction" method="resultMmist">
+            <result name="success">/WEB-INF/pages/mmist/mmist_result.jsp</result>
+            <result name="doing">/WEB-INF/pages/mmist/mmist_doing.jsp</result>
+            <result name="queue">/WEB-INF/pages/mmist/mmist_queue.jsp</result>
+            <result name="none">/WEB-INF/pages/mmist/mmist_none_result.jsp</result>
+            <result name="error">/WEB-INF/pages/mmist/mmist_error_result.jsp</result>
+        </action>
+        <action name="download" class="me.songbx.action.MmistResultDownloadAction">
+            <result name="success" type="stream">
+            	<param name="inputName">targetFile</param>
+				<param name="contentDisposition">filename="mmist.zip"</param>
+				<param name="bufferSize">4096</param>
+            </result>
+        </action>
+        <action name="log" class="me.songbx.action.PssmAction" method="log">
+            <result name="success">/WEB-INF/pages/mmist/log.jsp</result>
+        </action>
+	</package>
+	 
+	
+</struts>

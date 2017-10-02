@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="me.songbx.model">
+	<class	name="Pssm"	table="pssm">
+		<id	name="id" type="integer" column="id">
+			<generator class="identity"/>
+		</id>
+		<property name="error" column="error"
+			type="int"/>
+		<property name="complete" column="complete"
+			type="int"/>
+		<property name="isExist" column="isexist"
+			type="int"/>
+		<property name="isBegin" column="isbegin"
+			type="int"/>
+			
+		<property name="uuid" column="uuid"
+			type="string"/>
+		<property name="sequenceFile" column="sequencefile"
+			type="string"/>
+		<property name="createTime" column="createTime"
+			type="java.util.Date" />
+	</class>
+</hibernate-mapping>

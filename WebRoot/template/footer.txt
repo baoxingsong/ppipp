@@ -1,0 +1,16 @@
+
+	</div>
+	<div style="clear:both"></div>
+	<div id="footer">
+		<div class="bg"></div>
+		<div class="inner">
+		
+				<p align=center>Virus Immune & Bioinformatics Research Lab, College of Veterinary Medicine, Northwest A&F University, China</p><br />
+				<p align=center>&copy; 2013 all rights reserved.</p>
+			</p>
+		</div>
+	</div>
+</div>
+
+
+<div style="clear:both"></div>
